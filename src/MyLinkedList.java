@@ -2,7 +2,7 @@
 
 public class MyLinkedList {
     private Node head;
-    private int numNodes;
+    private int numNodes = 0;
 
     public MyLinkedList(Object data){
         head = new Node(data);
@@ -36,14 +36,23 @@ public class MyLinkedList {
     }
     public Node get(int index){
         Node temp = head;
-        for(int i = 0; i<index -1;i++)temp = head.next;
+        for(int i = 0; i<index - 1 ;i++)
+            temp = temp.next;
         return temp;
+    }
+    public Object testGetData(int index){
+        Node temp = head;
+        for(int i =0; i<index-1; i++){
+            temp = temp.next;
+        }
+        return temp.getData();
     }
     public void printList(){
         Node temp = head;
-        while(temp.next!=null){
+        while(temp!=null){
             System.out.println(temp.getData());
             temp = temp.next;
         }
+
     }
 }
